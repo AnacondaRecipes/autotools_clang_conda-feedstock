@@ -6,7 +6,11 @@ IF "%1"=="" (
 copy "%RECIPE_DIR%\%BUILDSCRIPT%" .
 copy "%BUILD_PREFIX%\Library\bin\create_def.sh" .
 copy "%BUILD_PREFIX%\Library\bin\conda_build_wrapper.sh" .
-set MSYSTEM=MINGW%ARCH%
+IF "%target_platform%"=="win-arm64" (
+  set MSYSTEM=CLANGARM64
+) ELSE (
+  set MSYSTEM=MINGW%ARCH%
+)
 set MSYS2_PATH_TYPE=inherit
 set CHERE_INVOKING=1
 FOR /F "delims=" %%i in ('cygpath.exe -u "%LIBRARY_PREFIX%"') DO set "PREFIX=%%i"
