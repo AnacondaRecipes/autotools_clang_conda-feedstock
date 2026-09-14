@@ -3,7 +3,7 @@ package:
   version: 0.0.10
 
 build:
-  number: 0
+  number: 1
   skip: True   # [not win]
 
 requirements:
@@ -12,13 +12,13 @@ requirements:
     - clangxx
     - llvm-tools
     - lld
-    - posix
-    - m2-automake-wrapper
-    - m2-libtool
-    - m2-autoconf
-    - m2-make
-    - m2-findutils
-    - m2-m4
+    - msys2-posix
+    - msys2-automake-wrapper
+    - msys2-libtool
+    - msys2-autoconf-wrapper
+    - msys2-make
+    - msys2-findutils
+    - msys2-m4
     - cmake
 
 test:
